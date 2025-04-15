@@ -118,7 +118,6 @@
       right: 0;
       z-index: 900;
       box-shadow: var(--shadow-sm);
-      height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,7 +126,7 @@
     nav .desktop-menu {
       display: flex;
       justify-content: center;
-      height: 100%;
+      height: 1rem;
       align-items: center;
     }
     
@@ -180,7 +179,7 @@
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: var(--header-height);
+    top: 10px; /* Align flush with the top of the page */
     left: 0;
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -196,7 +195,7 @@
     .hero {
       background: linear-gradient(to bottom, var(--background-color), var(--white));
       text-align: center;
-      padding: 2rem 1rem; /* Reduced padding */
+      padding: 0rem 1rem; /* Adjusted padding */
       margin-top: 0; /* Ensure no extra margin */
     }
     
@@ -245,7 +244,7 @@
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid var(--accent-color);
+      border: 3px solid var (--accent-color);
       box-shadow: var(--shadow-md);
     }
     
@@ -632,7 +631,7 @@
 </head>
 <body>
   <!-- Fixed Header -->
-  <header style="height: 110px;" class="site-header">
+  <header style="height: 70px;" class="site-header">
     <h1>REIKI WITH FREYA</h1>
     <div class="hamburger-menu" aria-label="Toggle mobile menu" role="button" tabindex="0">
       <span></span>
@@ -649,7 +648,7 @@
   <div class="desktop-menu">
     <a href="#about" aria-label="About section">About</a>
     <a href="#services" aria-label="Services section">Services</a>
-    <a href="#gallery" aria-label="Gallery section">Gallery</a>
+    <a href="#gallery" aria-label="Gallery section">Gallery (Coming Soon!)</a>
     <a href="#appointments" aria-label="Appointments section">Appointments</a>
     <a href="#faq" aria-label="FAQ section">FAQ</a>
     <a href="#testimonials" aria-label="Testimonials section">Testimonials</a>
@@ -658,7 +657,7 @@
   <div class="mobile-menu">
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#gallery">Gallery (Coming Soon!)</a>
     <a href="#appointments">Appointments</a>
     <a href="#faq">FAQ</a>
     <a href="#testimonials">Testimonials</a>
