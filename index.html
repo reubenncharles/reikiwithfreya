@@ -910,5 +910,25 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        // Toggle the active class on the clicked question
+        this.classList.toggle('active');
+
+        // Find the next sibling (the answer) and toggle its visibility
+        const answer = this.nextElementSibling;
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null; // Collapse the answer
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + 'px'; // Expand the answer
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
