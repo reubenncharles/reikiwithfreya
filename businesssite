@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reiki with Freya | Gentle Energy Healing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="resources/css/styles.css" rel="stylesheet">
+</head>
+<style>/* Base styling */
+    body {
+      background-color: #fff5f7;
+      color: #4a4a4a;
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    
+    header {
+      background-color: #f3c6c9;
+      color: #7e5a83;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-bottom: 2px solid #d8c5e3;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #7e5a83;
+    }
+    
+    a {
+      color: #a06695;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    a:hover {
+      color: #8d4d81;
+      text-decoration: underline;
+    }
+    
+    /* Navigation */
+    nav {
+      background: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    nav a {
+      margin: 0 1rem;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+    }
+    
+    nav a:hover {
+      background-color: #fff0f5;
+      text-decoration: none;
+    }
+    
+    /* Hero section */
+    .hero {
+      background: linear-gradient(to bottom, #fff5f7, #fff);
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      color: #7e5a83;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-image {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 12px;
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    /* Main content */
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    section {
+      margin-bottom: 3rem;
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    }
+    
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid #f3c6c9;
+      padding-bottom: 0.5rem;
+    }
+    
+    /* About section */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .about-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid #f3c6c9;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Services section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .service-card {
+      background: #fff5f7;
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    
+    .service-card h3 {
+      margin-top: 0;
+      color: #8d4d81;
+    }
+    
+    /* Appointments section */
+    .schedule-container {
+      background: #fafafa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+    }
+    
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .schedule-day {
+      padding: 1rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+    
+    .schedule-day h4 {
+      margin-top: 0;
+      color: #8d4d81;
+      border-bottom: 1px dashed #f3c6c9;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Contact form */
+    form {
+      margin-top: 1.5rem;
+      display: grid;
+      gap: 1rem;
+    }
+    
+    form label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+    }
+    
+    form button {
+      background: #a06695;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      margin-top: 0.5rem;
+    }
+    
+    form button:hover {
+      background: #8d4d81;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .testimonial {
+      background: #fff5f7;
+      padding: 1.5rem;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .testimonial:before {
+      font-size: 4rem;
+      font-family: serif;
+      color: #f3c6c9;
+      position: absolute;
+      top: -0.5rem;
+      left: 0.5rem;
+      opacity: 0.5;
+    }
+    
+    .testimonial-author {
+      font-weight: 600;
+      color: #8d4d81;
+      margin-top: 1rem;
+      text-align: right;
+    }
+    
+    /* Footer */
+    footer {
+      background: #7e5a83;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    footer a {
+      color: #fff;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .social-links a {
+      font-size: 1.2rem;
+    }
+    
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      main {
+        padding: 1rem;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+      
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .about-image {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    section {
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #a06695;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+    }</style>
+<body>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#appointments">Appointments</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  
+  <div class="hero">
+    <h1>Reiki with Freya</h1>
+    <p>Gentle healing & peaceful energy for mind, body, and spirit</p>
+    <img src="resources/images/reikistock.jpg" alt="Freya practising reiki" class="hero-image">
+  </div>
+  
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="resources/images/fryeawedding.jpg" alt="Freya smiling" class="about-image" />
+        <div>
+          <p>Hi, I'm Freya — a certified Reiki practitioner offering gentle and calming energy healing sessions to help you find peace, balance, and space for yourself.</p>
+          <p>My approach is warm, intuitive, and tailored to your needs. Whether you're new to Reiki or returning, I'm here to support your journey toward wellness and inner harmony. 🩷</p>
+          <p>Through Reiki, I create a safe space for healing, stress relief, and restoration. Each session is personalized to address your specific needs, whether physical discomfort, emotional blockages, or simply a desire for deeper relaxation.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="services">
+      <h2>Services</h2>
+      <p>I offer personalized Reiki sessions designed to promote balance and wellbeing. Each session begins with a brief consultation to understand your needs and goals.</p>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>30-Minute Session</h3>
+          <p>A focused energy treatment targeting specific areas of concern.</p>
+          <p><strong>£35</strong></p>
+          <p>Perfect for busy schedules or as an introduction to Reiki.</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>60-Minute Session</h3>
+          <p>A comprehensive full-body treatment for complete relaxation and balance.</p>
+          <p><strong>£60</strong></p>
+          <p>Recommended for deeper work and more thorough energy balancing.</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>Distance Healing</h3>
+          <p>Experience the benefits of Reiki from the comfort of your own home.</p>
+          <p><strong>£40</strong></p>
+          <p>Includes a pre-session consultation and post-session feedback.</p>
+        </div>
+      </div>
+    </section>
+    
+    <section id="appointments">
+      <h2>Appointments</h2>
+      <p><strong>✨ Opening from May 7th ✨</strong></p>
+      <p>Choose between a half-hour treatment or a full one-hour session. All appointments include a brief consultation to ensure I can tailor the session to your needs.</p>
+      
+      <div class="schedule-container">
+        <h3>🧘‍♀️ At Home Appointments</h3>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <h4>Monday</h4>
+            <ul>
+              <li>12:30 PM – 1:00 PM</li>
+              <li>1:30 PM – 2:00 PM</li>
+            </ul>
+          </div>
+          
+          <div class="schedule-day">
+            <h4>Wednesday</h4>
+            <ul>
+              <li>9:30 AM – 10:30 AM</li>
+              <li>11:00 AM – 12:00 PM</li>
+              <li>12:30 PM – 1:00 PM</li>
+              <li>1:30 PM – 2:00 PM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="schedule-container">
+        <h3>🚗 Mobile Appointments</h3>
+        <p>I'm available for mobile appointments on Tuesday & Thursday evenings.</p>
+        <p>Please note that mobile appointments may include a small travel fee depending on location.</p>
+      </div>
+      
+      <p>Don't see a time that works for you? I'm flexible, so please don't hesitate to reach out for alternative appointment times.</p>
+    </section>
+    
+    <section id="testimonials">
+      <h2>Client Experiences</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>My session with Freya was incredibly restorative. I came in with shoulder tension and left feeling like a weight had been lifted, both physically and emotionally.</p>
+          <div class="testimonial-author">— Sarah K.</div>
+        </div>
+        
+        <div class="testimonial">
+          <p>As someone new to Reiki, Freya made me feel comfortable and explained everything clearly. The session was deeply relaxing and I've noticed improvements in my sleep quality since.</p>
+          <div class="testimonial-author">— Michael T.</div>
+        </div>
+        
+        <div class="testimonial">
+          <p>Freya has a true gift. Her intuitive approach helped address energy blockages I didn't even realize I had. I've booked monthly sessions going forward.</p>
+          <div class="testimonial-author">— Emma D.</div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>I'd love to hear from you! Reach out with any questions about Reiki or to book your session.</p>
+      
+      <p>Email: <a href="mailto:freyajasmin94@hotmail.co.uk">freyajasmin94@hotmail.co.uk</a></p>
+      <p>Phone: <a href="tel:+447814233305">+44 7814 233305</a></p>
+      <p>Instagram: <a href="https://instagram.com/reikiwithfreya" target="_blank">@reikiwithfreya</a></p>
+      
+      <form action="mailto:freyajasmin94@hotmail.co.uk" method="POST" enctype="text/plain">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div>
+          <label for="service">Service Interest</label>
+          <select id="service" name="service">
+            <option value="30min">30-Minute Session</option>
+            <option value="60min">60-Minute Session</option>
+            <option value="distance">Distance Healing</option>
+            <option value="inquiry">General Inquiry</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        
+        <button type="submit">Send Message</button>
+      </form>
+      
+      <p>Or message me on <a href="https://wa.me/447814233305" target="_blank">WhatsApp</a></p>
+    </section>
+  </main>
+  
+  <footer>
+    <p>Reiki with Freya &copy; 2025 | Gentle healing & peaceful energy</p>
+    <div class="social-links">
+      <a href="https://instagram.com/reikiwithfreya" target="_blank">Instagram</a>
+      <a href="https://wa.me/447814233305" target="_blank">WhatsApp</a>
+    </div>
+  </footer>
+  
+  <a href="#" class="back-to-top">↑</a>
+  
+  <script>
+    // Simple script to handle smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Back to top button visibility
+    window.addEventListener('scroll', function() {
+      const backToTopButton = document.querySelector('.back-to-top');
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'flex';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    
+    // Initialize the back to top button as hidden
+    document.querySelector('.back-to-top').style.display = 'none';
+  </script>
+</body>
+</html>
+      
+
+
