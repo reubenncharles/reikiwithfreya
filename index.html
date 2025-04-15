@@ -196,12 +196,13 @@
     .hero {
       background: linear-gradient(to bottom, var(--background-color), var(--white));
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 2rem 1rem; /* Reduced padding */
+      margin-top: 0; /* Ensure no extra margin */
     }
     
     .hero p {
       font-size: 1.2rem;
-      color: var(--primary-color);
+      color: var (--primary-color);
       margin-bottom: 2rem;
     }
     
@@ -310,7 +311,7 @@
     
     /* Gallery */
     .gallery {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 1rem;
       margin-top: 1.5rem;
@@ -639,7 +640,8 @@
       <span></span>
     </div>
   </header>
-  
+
+
 
   <!-- Fixed Navigation -->
   <!-- Fixed Navigation - remove the hamburger menu from here -->
@@ -716,7 +718,7 @@
       </div>
     </section>
     
-    <section id="gallery" style="display:none;">
+    <section id="gallery" style="display: none;">
       <h2>Gallery</h2>
       <p>Take a peek into my healing space and previous sessions.</p>
       
@@ -903,4 +905,3 @@
         </script>
         </body>
         </html>
-        
