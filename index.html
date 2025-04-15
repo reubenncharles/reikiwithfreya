@@ -3,119 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reiki with Freya offers gentle and calming energy healing sessions in a safe, welcoming environment to help you find balance and inner harmony.">
+  <meta property="og:title" content="Reiki with Freya | Gentle Energy Healing">
+  <meta property="og:description" content="Professional Reiki sessions for balance, healing and relaxation.">
+  <meta property="og:image" content="assets/images/reiki-og-image.jpg">
+  <meta property="og:url" content="https://www.reikiwithfreya.com">
   <title>Reiki with Freya | Gentle Energy Healing</title>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="resources/css/styles.css" rel="stylesheet">
-</head>
-<style>/* Base styling */
-    body {
-      background-color: #fff5f7;
-      color: #4a4a4a;
-      font-family: 'Quicksand', sans-serif;
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Base styling */
+    :root {
+      --primary-color: #7e5a83;
+      --secondary-color: #a06695;
+      --accent-color: #f3c6c9;
+      --background-color: #fff5f7;
+      --text-color: #4a4a4a;
+      --white: #ffffff;
+      --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
+      --shadow-lg: 0 8px 20px rgba(0,0,0,0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 8px;
+    }
+    
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      font-family: 'Quicksand', sans-serif;
       line-height: 1.6;
+      position: relative;
+      min-height: 100vh;
     }
     
-    header {
-      background-color: #f3c6c9;
-      color: #7e5a83;
-      text-align: center;
-      padding: 2rem 1rem;
-      border-bottom: 2px solid #d8c5e3;
-    }
-    
-    h1, h2, h3 {
+    /* Typography */
+    h1, h2, h3, h4 {
       font-family: 'Cormorant Garamond', serif;
-      color: #7e5a83;
+      color: var(--primary-color);
+      line-height: 1.2;
+    }
+    
+    h1 {
+      font-size: 3rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
     }
     
     a {
-      color: #a06695;
+      color: var(--secondary-color);
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
     
     a:hover {
-      color: #8d4d81;
+      color: var(--primary-color);
       text-decoration: underline;
     }
     
     /* Navigation */
     nav {
-      background: white;
+      background: var(--white);
       padding: 1rem;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    nav .desktop-menu {
+      display: flex;
+      justify-content: center;
     }
     
     nav a {
       margin: 0 1rem;
       font-weight: 600;
       padding: 0.5rem 0.75rem;
-      border-radius: 4px;
+      border-radius: var(--border-radius);
     }
     
-    nav a:hover {
-      background-color: #fff0f5;
+    nav a:hover, nav a:focus {
+      background-color: var(--background-color);
       text-decoration: none;
     }
-  
-/* Mobile styles */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  main {
-    padding: 1rem;
-  }
-
-  section {
-    padding: 1.5rem;
-  }
-
-  .about-content {
-    flex-direction: column;
-  }
-
-  .about-image {
-    margin-right: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  nav a {
-    margin: 0 0.5rem; /* Reduce horizontal margin */
-    padding: 0.5rem 0.5rem; /* Reduce horizontal padding */
-    font-size: 0.9rem; /* Optionally reduce font size */
-  }
-
+    
+    .hamburger-menu {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .hamburger-menu span {
+      height: 3px;
+      width: 25px;
+      background: var(--primary-color);
+      margin: 2px 0;
+      border-radius: 3px;
+      transition: var(--transition);
+    }
+    
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      padding-top: 1rem;
+    }
+    
+    .mobile-menu a {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--accent-color);
+    }
+    
     /* Hero section */
     .hero {
-      background: linear-gradient(to bottom, #fff5f7, #fff);
+      background: linear-gradient(to bottom, var(--background-color), var(--white));
       text-align: center;
       padding: 4rem 1rem;
     }
     
     .hero h1 {
-      font-size: 3rem;
       margin-bottom: 0.5rem;
     }
     
     .hero p {
       font-size: 1.2rem;
-      color: #7e5a83;
+      color: var(--primary-color);
       margin-bottom: 2rem;
     }
     
@@ -125,38 +164,32 @@
       border-radius: 12px;
       margin: 0 auto;
       display: block;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: var(--shadow-lg);
+      object-fit: cover;
+      height: auto;
     }
     
     /* Main content */
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem;
     }
     
     section {
       margin-bottom: 3rem;
-      background: #ffffff;
+      background: var(--white);
       padding: 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-    }
-    
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid #f3c6c9;
-      padding-bottom: 0.5rem;
+      box-shadow: var(--shadow-sm);
+      animation: fadeIn 0.6s ease-out;
     }
     
     /* About section */
     .about-content {
       display: flex;
-      flex-direction: column;
       align-items: center;
-      text-align: center;
+      gap: 2rem;
     }
     
     .about-image {
@@ -164,37 +197,101 @@
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1.5rem;
-      border: 3px solid #f3c6c9;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      border: 3px solid var(--accent-color);
+      box-shadow: var(--shadow-md);
     }
     
     /* Services section */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
     
     .service-card {
-      background: #fff5f7;
+      background: var(--background-color);
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
     }
     
     .service-card h3 {
       margin-top: 0;
-      color: #8d4d81;
+      color: var(--secondary-color);
+    }
+    
+    .service-price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--secondary-color);
+      margin: 1rem 0;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--secondary-color);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius);
+      margin-top: 1rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+    }
+    
+    .btn:hover, .btn:focus {
+      background: var(--primary-color);
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: var(--white);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .gallery-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      aspect-ratio: 1;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
     }
     
     /* Appointments section */
     .schedule-container {
       background: #fafafa;
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       margin-top: 1.5rem;
     }
     
@@ -207,20 +304,51 @@
     
     .schedule-day {
       padding: 1rem;
-      background: white;
-      border-radius: 8px;
+      background: var(--white);
+      border-radius: var(--border-radius);
       box-shadow: 0 2px 5px rgba(0,0,0,0.03);
     }
     
     .schedule-day h4 {
       margin-top: 0;
-      color: #8d4d81;
-      border-bottom: 1px dashed #f3c6c9;
+      color: var(--secondary-color);
+      border-bottom: 1px dashed var(--accent-color);
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
     }
     
+    .schedule-day ul {
+      list-style-type: none;
+    }
+    
+    .schedule-day li {
+      padding: 0.25rem 0;
+    }
+    
     /* Contact form */
+    .contact-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .contact-method {
+      flex: 1;
+      min-width: 200px;
+      padding: 1rem;
+      background: var(--background-color);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-method i {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+    }
+    
     form {
       margin-top: 1.5rem;
       display: grid;
@@ -239,28 +367,53 @@
       width: 100%;
       padding: 0.75rem;
       border: 1px solid #ddd;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       font-family: 'Quicksand', sans-serif;
       font-size: 1rem;
     }
     
-    form button {
-      background: #a06695;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: all 0.2s ease;
-      margin-top: 0.5rem;
+    form input:focus,
+    form textarea:focus,
+    form select:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 2px rgba(243, 198, 201, 0.3);
     }
     
-    form button:hover {
-      background: #8d4d81;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--accent-color);
+      padding-bottom: 1rem;
+    }
+    
+    .faq-question {
+      font-weight: 600;
+      color: var(--secondary-color);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      transition: var(--transition);
+    }
+    
+    .faq-question.active::after {
+      content: '−';
+      transform: rotate(180deg);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-question.active + .faq-answer {
+      max-height: 500px;
     }
     
     /* Testimonials */
@@ -272,16 +425,18 @@
     }
     
     .testimonial {
-      background: #fff5f7;
+      background: var(--background-color);
       padding: 1.5rem;
-      border-radius: 8px;
+      border-radius: var(--border-radius);
       position: relative;
+      box-shadow: var(--shadow-sm);
     }
     
-    .testimonial:before {
+    .testimonial::before {
+      content: '"';
       font-size: 4rem;
       font-family: serif;
-      color: #f3c6c9;
+      color: var(--accent-color);
       position: absolute;
       top: -0.5rem;
       left: 0.5rem;
@@ -290,22 +445,22 @@
     
     .testimonial-author {
       font-weight: 600;
-      color: #8d4d81;
+      color: var(--secondary-color);
       margin-top: 1rem;
       text-align: right;
     }
     
     /* Footer */
     footer {
-      background: #7e5a83;
-      color: white;
+      background: var(--primary-color);
+      color: var(--white);
       text-align: center;
       padding: 2rem;
       margin-top: 3rem;
     }
     
     footer a {
-      color: #fff;
+      color: var(--white);
     }
     
     .social-links {
@@ -317,20 +472,67 @@
     
     .social-links a {
       font-size: 1.2rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--secondary-color);
+      color: var(--white);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+    
+    .back-to-top.visible {
+      opacity: 0.8;
+      visibility: visible;
+    }
+    
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+      text-decoration: none;
+      color: var(--white);
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     /* Mobile styles */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      
-      .hero h1 {
+      h1 {
         font-size: 2.2rem;
       }
       
-      .hero p {
-        font-size: 1rem;
+      h2 {
+        font-size: 1.8rem;
       }
       
       main {
@@ -343,71 +545,74 @@
       
       .about-content {
         flex-direction: column;
+        text-align: center;
       }
       
-      .about-image {
-        margin-right: 0;
-        margin-bottom: 1.5rem;
+      /* Mobile navigation */
+      nav .desktop-menu {
+        display: none;
+      }
+      
+      .hamburger-menu {
+        display: flex;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+      }
+      
+      .mobile-menu.active {
+        display: flex;
+      }
+      
+      .contact-methods {
+        flex-direction: column;
       }
     }
-    
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    section {
-      animation: fadeIn 0.6s ease-out;
-    }
-    
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #a06695;
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      opacity: 0.8;
-      transition: all 0.3s ease;
-    }
-    
-    .back-to-top:hover {
-      opacity: 1;
-      transform: translateY(-3px);
-    }</style>
+  </style>
+</head>
 <body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#appointments">Appointments</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
+  <nav aria-label="Main navigation">
+    <div class="desktop-menu">
+      <a href="#about" aria-label="About section">About</a>
+      <a href="#services" aria-label="Services section">Services</a>
+      <a href="#gallery" aria-label="Gallery section">Gallery</a>
+      <a href="#appointments" aria-label="Appointments section">Appointments</a>
+      <a href="#faq" aria-label="FAQ section">FAQ</a>
+      <a href="#testimonials" aria-label="Testimonials section">Testimonials</a>
+      <a href="#contact" aria-label="Contact section">Contact</a>
+    </div>
+    <div class="hamburger-menu" aria-label="Toggle mobile menu" role="button" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="mobile-menu">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#appointments">Appointments</a>
+      <a href="#faq">FAQ</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
   
   <div class="hero">
     <h1>Reiki with Freya</h1>
     <p>Gentle healing & peaceful energy for mind, body, and spirit</p>
-    <img src="/reikistock.jpg" alt="Freya practising reiki" class="hero-image">
+    <img src="/api/placeholder/600/400" alt="Reiki healing session in progress" class="hero-image" loading="lazy">
   </div>
   
   <main>
     <section id="about">
       <h2>About Me</h2>
       <div class="about-content">
-        <img src="/fryeawedding.jpg" alt="Freya smiling" class="about-image" />
+        <img src="/api/placeholder/400/400" alt="Freya smiling" class="about-image" loading="lazy">
         <div>
           <p>Hi, I'm Freya — a certified Reiki practitioner offering gentle and calming energy healing sessions to help you find peace, balance, and space for yourself.</p>
           <p>My approach is warm, intuitive, and tailored to your needs. Whether you're new to Reiki or returning, I'm here to support your journey toward wellness and inner harmony. 🩷</p>
           <p>Through Reiki, I create a safe space for healing, stress relief, and restoration. Each session is personalized to address your specific needs, whether physical discomfort, emotional blockages, or simply a desire for deeper relaxation.</p>
+          <a href="#contact" class="btn">Book a Session</a>
         </div>
       </div>
     </section>
@@ -420,22 +625,45 @@
         <div class="service-card">
           <h3>30-Minute Session</h3>
           <p>A focused energy treatment targeting specific areas of concern.</p>
-          <p><strong>£35</strong></p>
+          <div class="service-price">£35</div>
           <p>Perfect for busy schedules or as an introduction to Reiki.</p>
+          <a href="#contact" class="btn">Book Now</a>
         </div>
         
         <div class="service-card">
           <h3>60-Minute Session</h3>
           <p>A comprehensive full-body treatment for complete relaxation and balance.</p>
-          <p><strong>£60</strong></p>
+          <div class="service-price">£60</div>
           <p>Recommended for deeper work and more thorough energy balancing.</p>
+          <a href="#contact" class="btn">Book Now</a>
         </div>
         
         <div class="service-card">
           <h3>Distance Healing</h3>
           <p>Experience the benefits of Reiki from the comfort of your own home.</p>
-          <p><strong>£40</strong></p>
+          <div class="service-price">£40</div>
           <p>Includes a pre-session consultation and post-session feedback.</p>
+          <a href="#contact" class="btn">Book Now</a>
+        </div>
+      </div>
+    </section>
+    
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <p>Take a peek into my healing space and previous sessions.</p>
+      
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="/api/placeholder/300/300" alt="Reiki healing space with candles" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/300/300" alt="Healing crystals arrangement" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/300/300" alt="Reiki hand position demonstration" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="/api/placeholder/300/300" alt="Calming reiki environment" loading="lazy">
         </div>
       </div>
     </section>
@@ -475,25 +703,65 @@
       </div>
       
       <p>Don't see a time that works for you? I'm flexible, so please don't hesitate to reach out for alternative appointment times.</p>
+      <a href="#contact" class="btn">Request Appointment</a>
+    </section>
+    
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="faq-item">
+        <div class="faq-question">What is Reiki?</div>
+        <div class="faq-answer">
+          <p>Reiki is a Japanese energy healing technique that promotes relaxation, reduces stress and anxiety, and encourages healing. It's based on the idea that an unseen "life force energy" flows through us. If one's life force energy is low, then we are more likely to get sick or feel stressed, and if it is high, we are more capable of being happy and healthy.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">What does a Reiki session feel like?</div>
+        <div class="faq-answer">
+          <p>Most people report feeling deeply relaxed during a Reiki session. You might experience sensations of warmth, tingling, or a gentle pulsing where my hands are placed or hovering. Some clients feel a release of tension, while others might see colors or images. It's also completely normal to simply feel a deep sense of relaxation.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Do I need to remove clothing for a Reiki session?</div>
+        <div class="faq-answer">
+          <p>No, Reiki is performed with you fully clothed. I recommend wearing comfortable, loose-fitting clothes to help you relax during the session.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">How many sessions will I need?</div>
+        <div class="faq-answer">
+          <p>This varies depending on your individual needs and goals. Some people benefit from a single session when addressing a specific issue, while others prefer regular sessions as part of their ongoing wellness routine. After your first session, we can discuss what might be most beneficial for you.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Is Reiki a substitute for medical treatment?</div>
+        <div class="faq-answer">
+          <p>No, Reiki is a complementary therapy that works alongside conventional medical treatment. It is not a substitute for consulting with healthcare professionals or following medical advice.</p>
+        </div>
+      </div>
     </section>
     
     <section id="testimonials">
       <h2>Client Experiences</h2>
       <div class="testimonials">
-        <div class="testimonial">
+        <article class="testimonial">
           <p>My session with Freya was incredibly restorative. I came in with shoulder tension and left feeling like a weight had been lifted, both physically and emotionally.</p>
           <div class="testimonial-author">— Sarah K.</div>
-        </div>
+        </article>
         
-        <div class="testimonial">
+        <article class="testimonial">
           <p>As someone new to Reiki, Freya made me feel comfortable and explained everything clearly. The session was deeply relaxing and I've noticed improvements in my sleep quality since.</p>
           <div class="testimonial-author">— Michael T.</div>
-        </div>
+        </article>
         
-        <div class="testimonial">
+        <article class="testimonial">
           <p>Freya has a true gift. Her intuitive approach helped address energy blockages I didn't even realize I had. I've booked monthly sessions going forward.</p>
           <div class="testimonial-author">— Emma D.</div>
-        </div>
+        </article>
       </div>
     </section>
     
@@ -501,19 +769,46 @@
       <h2>Contact</h2>
       <p>I'd love to hear from you! Reach out with any questions about Reiki or to book your session.</p>
       
-      <p>Email: <a href="mailto:freyajasmin94@hotmail.co.uk">freyajasmin94@hotmail.co.uk</a></p>
-      <p>Phone: <a href="tel:+447814233305">+44 7814 233305</a></p>
-      <p>Instagram: <a href="https://instagram.com/reikiwithfreya" target="_blank">@reikiwithfreya</a></p>
+      <div class="contact-methods">
+        <div class="contact-method">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <strong>Email</strong><br>
+            <a href="mailto:freyajasmin94@hotmail.co.uk">freyajasmin94@hotmail.co.uk</a>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <i class="fas fa-phone"></i>
+          <div>
+            <strong>Phone</strong><br>
+            <a href="tel:+447814233305">+44 7814 233305</a>
+          </div>
+        </div>
+        
+        <div class="contact-method">
+          <i class="fab fa-instagram"></i>
+          <div>
+            <strong>Instagram</strong><br>
+            <a href="https://instagram.com/reikiwithfreya" target="_blank" rel="noopener">@reikiwithfreya</a>
+          </div>
+        </div>
+      </div>
       
-      <form action="mailto:freyajasmin94@hotmail.co.uk" method="POST" enctype="text/plain">
+      <form id="contactForm">
         <div>
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <input type="text" id="name" name="name" required aria-required="true">
         </div>
         
         <div>
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required aria-required="true">
+        </div>
+        
+        <div>
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone">
         </div>
         
         <div>
@@ -527,61 +822,144 @@
         </div>
         
         <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <label for="date">Preferred Date (optional)</label>
+          <input type="date" id="date" name="date" min="2025-05-07">
         </div>
         
-        <button type="submit">Send Message</button>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Send Message</button>
       </form>
       
-      <p>Or message me on <a href="https://wa.me/447814233305" target="_blank">WhatsApp</a></p>
+      <p style="margin-top: 1.5rem;">Or send me a direct message on <a href="https://wa.me/447814233305" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
     </section>
   </main>
   
   <footer>
     <p>Reiki with Freya &copy; 2025 | Gentle healing & peaceful energy</p>
     <div class="social-links">
-      <a href="https://instagram.com/reikiwithfreya" target="_blank">Instagram</a>
-      <a href="https://wa.me/447814233305" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/reikiwithfreya" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/447814233305" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
   </footer>
   
-  <a href="#" class="back-to-top">↑</a>
-  
+  <a href="#" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
   <script>
-    // Simple script to handle smooth scrolling for navigation
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
+    document.addEventListener('DOMContentLoaded', function() {
+  // FAQ functionality
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      // Toggle active class on the clicked question
+      question.classList.toggle('active');
+      
+      // Optional: Close other FAQs when opening a new one
+      // Uncomment this block if you want only one FAQ open at a time
+      /*
+      faqQuestions.forEach(otherQuestion => {
+        if (otherQuestion !== question && otherQuestion.classList.contains('active')) {
+          otherQuestion.classList.remove('active');
         }
       });
+      */
     });
-    
-    // Back to top button visibility
-    window.addEventListener('scroll', function() {
-      const backToTopButton = document.querySelector('.back-to-top');
-      if (window.pageYOffset > 300) {
-        backToTopButton.style.display = 'flex';
-      } else {
-        backToTopButton.style.display = 'none';
+  });
+  
+  // Mobile menu toggle
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  
+  hamburgerMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    // Optional: Animate hamburger menu bars to create an X when open
+    hamburgerMenu.classList.toggle('active');
+  });
+  
+  // Close mobile menu when a link is clicked
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
+    });
+  });
+  
+  // Back to top button visibility
+  const backToTopButton = document.querySelector('.back-to-top');
+  
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
       }
     });
-    
-    // Initialize the back to top button as hidden
-    document.querySelector('.back-to-top').style.display = 'none';
+  });
+  
+  // Form submission handling
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Collect form data
+      const formData = new FormData(contactForm);
+      const formDataObj = {};
+      formData.forEach((value, key) => {
+        formDataObj[key] = value;
+      });
+      
+      // Here you would typically send the data to your server
+      // For now, we'll just show a success message
+      
+      // Create a success message element
+      const successMessage = document.createElement('div');
+      successMessage.classList.add('form-success');
+      successMessage.innerHTML = `
+        <h3>Thank you for your message!</h3>
+        <p>I'll get back to you as soon as possible.</p>
+      `;
+      
+      // Add some styling
+      successMessage.style.backgroundColor = '#e8f5e9';
+      successMessage.style.padding = '1rem';
+      successMessage.style.borderRadius = '8px';
+      successMessage.style.marginTop = '1rem';
+      successMessage.style.animation = 'fadeIn 0.5s ease-out';
+      
+      // Replace form with success message
+      contactForm.style.display = 'none';
+      contactForm.parentNode.insertBefore(successMessage, contactForm.nextSibling);
+      
+      // Reset form for future use (though it's hidden)
+      contactForm.reset();
+    });
+  }
+});
   </script>
 </body>
 </html>
-      
-
-
