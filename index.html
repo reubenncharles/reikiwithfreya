@@ -282,7 +282,7 @@
     .service-price {
       font-size: 1.25rem;
       font-weight: 600;
-      color: var(--secondary-color);
+      color: var (--secondary-color);
       margin: 1rem 0;
     }
     
@@ -878,29 +878,37 @@
         <div>
           <label for="phone">Phone (optional)</label>
           <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-            </div>
-            </form>
-          </section>
-          </main>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            const hamburgerMenu = document.querySelector('.hamburger-menu');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            hamburgerMenu.addEventListener('click', function() {
-              this.classList.toggle('active');
-              mobileMenu.classList.toggle('active');
-            });
-            
-            // Close mobile menu when a link is clicked
-            const mobileLinks = document.querySelectorAll('.mobile-menu a');
-            mobileLinks.forEach(link => {
-              link.addEventListener('click', function() {
-                hamburgerMenu.classList.remove('active');
-                mobileMenu.classList.remove('active');
-              });
-            });
-          });
-        </script>
-        </body>
-        </html>
+        </div>
+        
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required aria-required="true"></textarea>
+        </div>
+        
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerMenu = document.querySelector('.hamburger-menu');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      
+      hamburgerMenu.addEventListener('click', function() {
+        this.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+      });
+      
+      // Close mobile menu when a link is clicked
+      const mobileLinks = document.querySelectorAll('.mobile-menu a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          hamburgerMenu.classList.remove('active');
+          mobileMenu.classList.remove('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
