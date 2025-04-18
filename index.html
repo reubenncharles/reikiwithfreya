@@ -9,926 +9,288 @@
   <meta property="og:image" content="assets/images/reiki-og-image.jpg">
   <meta property="og:url" content="https://www.reikiwithfreya.com">
   <title>Reiki with Freya | Gentle Energy Healing</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    /* Base styling */
-    :root {
-      --primary-color: #7e5a83; 
-      --secondary-color: #a06695;
-      --accent-color: #f3c6c9;
-      --background-color: #fff5f7;
-      --text-color: #4a4a4a;
-      --white: #ffffff;
-      --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 10px rgba(0,0,0,0.1);
-      --shadow-lg: 0 8px 20px rgba(0,0,0,0.1);
-      --transition: all 0.3s ease;
-      --border-radius: 8px;
-      --header-height: 60px;
-      --nav-height: 50px;
-    }
-    
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: calc(var(--header-height) + var(--nav-height));
-    }
-    
-    body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      font-family: 'Quicksand', sans-serif;
-      line-height: 1.6;
-      position: relative;
-      min-height: 100vh;
-      padding-top: calc(var(--header-height) + var(--nav-height)); /* Add padding for fixed header */
-    }
-    
-    /* Typography */
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
-      color: var(--primary-color);
-      line-height: 1.2;
-    }
-    
-    h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid var(--accent-color);
-      padding-bottom: 0.5rem;
-    }
-    
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    p {
-      margin-bottom: 1rem;
-    }
-    
-    a {
-      color: var(--secondary-color);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    
-    a:hover {
-      color: var(--primary-color);
-      text-decoration: underline;
-    }
-    
-    /* Fixed Header */
-    .site-header {
-      background-color: var(--accent-color);
-      color: var(--primary-color);
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      height: var(--header-height);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-sm);
-    }
-    
-    /* Navigation */
-    nav {
-      background: var(--white);
-      padding: 0 1rem;
-      text-align: center;
-      position: fixed;
-      top: var(--header-height);
-      left: 0;
-      right: 0;
-      z-index: 900;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    nav .desktop-menu {
-      display: flex;
-      justify-content: center;
-      height: 1rem;
-      align-items: center;
-    }
-    
-    nav a {
-      margin: 0 1rem;
-      font-weight: 600;
-      padding: 0.5rem 0.75rem;
-      border-radius: var(--border-radius);
-      display: inline-flex;
-      align-items: center;
-    }
-    
-    nav a:hover, nav a:focus {
-      background-color: var(--background-color);
-      text-decoration: none;
-    }
-    
-    .hamburger-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 950;
-    align-items: center;
-    justify-content: center;
-  }
-    
-    .hamburger-menu span {
-      height: 3px;
-      width: 25px;
-      background: var(--primary-color);
-      margin: 2px 0;
-      border-radius: 3px;
-      transition: var(--transition);
-    }
-    
-    .hamburger-menu.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .hamburger-menu.active span:nth-child(2) {
-      opacity: 0;
-    }
-    
-    .hamburger-menu.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
-    }
-    
-    .mobile-menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 10px; /* Align flush with the top of the page */
-    left: 0;
-    background: var(--white);
-    box-shadow: var(--shadow-sm);
-    z-index: 800;
-  }
-    
-    .mobile-menu a {
-      padding: 0.75rem;
-      border-bottom: 1px solid var(--accent-color);
-    }
-    
-    /* Hero section */
-    .hero {
-      background: linear-gradient(to bottom, var(--background-color), var(--white));
-      text-align: center;
-      padding: 0rem 1rem; /* Adjusted padding */
-      margin-top: 0; /* Ensure no extra margin */
-    }
-    
-    .hero p {
-      font-size: 1.2rem;
-      color: var (--primary-color);
-      margin-bottom: 2rem;
-    }
-    
-    .hero-image {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 12px;
-      margin: 0 auto;
-      display: block;
-      box-shadow: var(--shadow-lg);
-      object-fit: cover;
-      height: auto;
-    }
-    
-    /* Main content */
-    main {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-    
-    section {
-      margin-bottom: 3rem;
-      background: var(--white);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow-sm);
-      animation: fadeIn 0.6s ease-out;
-    }
-    
-    /* About section */
-    .about-content {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-    }
-    
-    .about-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var (--accent-color);
-      box-shadow: var(--shadow-md);
-    }
-    
-    /* Services section */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    
-    .service-card {
-      background: var(--background-color);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-    
-    .service-card h3 {
-      margin-top: 0;
-      color: var(--secondary-color);
-    }
-    
-    .service-price {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var (--secondary-color);
-      margin: 1rem 0;
-    }
-    
-    .btn {
-      display: inline-block;
-      background: var(--secondary-color);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      border-radius: var(--border-radius);
-      margin-top: 1rem;
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-    }
-    
-    .btn:hover, .btn:focus {
-      background: var(--primary-color);
-      transform: translateY(-2px);
-      text-decoration: none;
-      color: var(--white);
-      box-shadow: var(--shadow-sm);
-    }
-    
-    /* Gallery */
-    .gallery {
-      display: none;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    
-    .gallery-item {
-      border-radius: var(--border-radius);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      aspect-ratio: 1;
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: var(--transition);
-    }
-    
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-    
-    /* Appointments section */
-    .schedule-container {
-      background: #fafafa;
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      margin-top: 1.5rem;
-    }
-    
-    .schedule-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .schedule-day {
-      padding: 1rem;
-      background: var(--white);
-      border-radius: var(--border-radius);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    }
-    
-    .schedule-day h4 {
-      margin-top: 0;
-      color: var(--secondary-color);
-      border-bottom: 1px dashed var(--accent-color);
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .schedule-day ul {
-      list-style-type: none;
-    }
-    
-    .schedule-day li {
-      padding: 0.25rem 0;
-    }
-    
-    /* FAQ Section */
-    .faq-item {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid var(--accent-color);
-      padding-bottom: 1rem;
-    }
-    
-    .faq-question {
-      font-weight: 600;
-      color: var(--secondary-color);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 0;
-    }
-    
-    .faq-question::after {
-      content: '+';
-      transition: var(--transition);
-    }
-    
-    .faq-question.active::after {
-      content: '−';
-      transform: rotate(180deg);
-    }
-    
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    
-    .faq-question.active + .faq-answer {
-      max-height: 500px;
-    }
-    
-    /* Contact form */
-    .contact-methods {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-    
-    .contact-method {
-      flex: 1;
-      min-width: 200px;
-      padding: 1rem;
-      background: var(--background-color);
-      border-radius: var(--border-radius);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    
-    .contact-method i {
-      font-size: 1.5rem;
-      color: var(--secondary-color);
-    }
-    
-    form {
-      margin-top: 1.5rem;
-      display: grid;
-      gap: 1rem;
-    }
-    
-    form label {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-      display: block;
-    }
-    
-    form input,
-    form textarea,
-    form select {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid #ddd;
-      border-radius: var(--border-radius);
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1rem;
-    }
-    
-    form input:focus,
-    form textarea:focus,
-    form select:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 0 2px rgba(243, 198, 201, 0.3);
-    }
-    
-    /* Testimonials */
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    
-    .testimonial {
-      background: var(--background-color);
-      padding: 1.5rem;
-      border-radius: var(--border-radius);
-      position: relative;
-      box-shadow: var(--shadow-sm);
-    }
-    
-    .testimonial::before {
-      content: '"';
-      font-size: 4rem;
-      font-family: serif;
-      color: var(--accent-color);
-      position: absolute;
-      top: -0.5rem;
-      left: 0.5rem;
-      opacity: 0.5;
-    }
-    
-    .testimonial-author {
-      font-weight: 600;
-      color: var(--secondary-color);
-      margin-top: 1rem;
-      text-align: right;
-    }
-    
-    /* Footer */
-    footer {
-      background: var(--primary-color);
-      color: var(--white);
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-    }
-    
-    footer a {
-      color: var(--white);
-    }
-    
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-    
-    .social-links a {
-      font-size: 1.2rem;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(255, 255, 255, 0.1);
-      transition: var(--transition);
-    }
-    
-    .social-links a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-3px);
-    }
-    
-    /* Back to top button */
-    .back-to-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--secondary-color);
-      color: var(--white);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: var(--shadow-md);
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-    }
-    
-    .back-to-top.visible {
-      opacity: 0.8;
-      visibility: visible;
-    }
-    
-    .back-to-top:hover {
-      opacity: 1;
-      transform: translateY(-3px);
-      text-decoration: none;
-      color: var(--white);
-    }
-    
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* Mobile styles */
-  
-  @media (max-width: 768px) {
-    .hamburger-menu {
-      display: flex;
-    }
-  }
-      
-      h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.6rem;
-      }
-      
-      main {
-        padding: 1rem;
-      }
-      
-      section {
-        padding: 1.5rem;
-      }
-      
-      .about-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      /* Mobile navigation */
-      nav .desktop-menu {
-        display: none;
-      }
-      
-      .hamburger-menu {
-        display: flex;
-      }
-      
-      .mobile-menu.active {
-        display: flex;
-      }
-      
-      .contact-methods {
-        flex-direction: column;
-      }
-
-     
-  .site-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/resources/css/styles.css">
+  <script type="text/javascript" src="/resources/js/script.js" defer></script>
+  <!-- Font Awesome will be loaded in the CSS file to improve page loading performance -->
 </head>
 <body>
-  <!-- Fixed Header -->
-  <header style="height: 70px;" class="site-header">
-    <h1>REIKI WITH FREYA</h1>
-    <div class="hamburger-menu" aria-label="Toggle mobile menu" role="button" tabindex="0">
-      <span></span>
-      <span></span>
-      <span></span>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header class="site-header">
+    <div class="container header-container">
+      <h1 class="site-title">Reiki with Freya</h1>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="sr-only">Menu</span>
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
+  <nav class="primary-navigation" id="primary-navigation" aria-label="Main navigation">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#appointments" class="nav-link">Appointments</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-
-  <!-- Fixed Navigation -->
-  <!-- Fixed Navigation - remove the hamburger menu from here -->
-<nav aria-label="Main navigation">
-  <div class="desktop-menu">
-    <a href="#about" aria-label="About section">About</a>
-    <a href="#services" aria-label="Services section">Services</a>
-    <a href="#gallery" aria-label="Gallery section">Gallery (Coming Soon!)</a>
-    <a href="#appointments" aria-label="Appointments section">Appointments</a>
-    <a href="#faq" aria-label="FAQ section">FAQ</a>
-    <a href="#testimonials" aria-label="Testimonials section">Testimonials</a>
-    <a href="#contact" aria-label="Contact section">Contact</a>
-  </div>
-  <div class="mobile-menu">
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery (Coming Soon!)</a>
-    <a href="#appointments">Appointments</a>
-    <a href="#faq">FAQ</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-
-    
-  </div>
-</nav>
-  
-  <div class="hero">
-    <p>Gentle healing & peaceful energy for mind, body, and spirit</p>
-    <img src="/images/reikistock.jpg" alt="Reiki healing session in progress" class="hero-image" loading="lazy">
-  </div>
-  
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <img src="/images/freya-headshot.jpg" alt="Freya smiling" class="about-image" loading="lazy">
-        <div>
-          <p>Hi, I'm Freya — a certified Reiki practitioner offering gentle and calming energy healing sessions to help you find peace, balance, and space for yourself.</p>
-          <p>My approach is warm, intuitive, and tailored to your needs. Whether you're new to Reiki or returning, I'm here to support your journey toward wellness and inner harmony. 🩷</p>
-          <p>Through Reiki, I create a safe space for healing, stress relief, and restoration. Each session is personalized to address your specific needs, whether physical discomfort, emotional blockages, or simply a desire for deeper relaxation.</p>
-          <a href="#contact" class="btn">Book a Session</a>
-        </div>
+  <section class="hero">
+    <div class="container">
+      <p class="hero-tagline">Gentle healing & peaceful energy for mind, body, and spirit</p>
+      <div class="hero-image-container">
+        <img src="resources/images/reikistock.jpg" alt="Reiki healing session in progress" class="hero-image" width="450" height="300" loading="lazy">
       </div>
-    </section>
-    
-    <section id="services">
-      <h2>Services</h2>
-      <p>I offer personalized Reiki sessions designed to promote balance and wellbeing. Each session begins with a brief consultation to understand your needs and goals.</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <div class="container">
+      <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-image-container">
+            <img src="resources/images/freya-headshot.jpg" alt="Freya smiling" class="about-image" width="200" height="200" loading="lazy">
+          </div>
+          <div class="about-text">
+            <p>Hi, I'm Freya — a certified Reiki practitioner offering gentle and calming energy healing sessions to help you find peace, balance, and space for yourself.</p>
+            <p>My approach is warm, intuitive, and tailored to your needs. Whether you're new to Reiki or returning, I'm here to support your journey toward wellness and inner harmony. 🩷</p>
+            <p>Through Reiki, I create a safe space for healing, stress relief, and restoration. Each session is personalized to address your specific needs, whether physical discomfort, emotional blockages, or simply a desire for deeper relaxation.</p>
+            <a href="#contact" class="btn btn-primary">Book a Session</a>
+          </div>
+        </div>
+      </section>
       
-      <div class="services-grid">
-        <div class="service-card">
-          <h3>30-Minute Session</h3>
-          <p>A focused energy treatment targeting specific areas of concern.</p>
-          <div class="service-price">£20</div>
-          <p>Perfect for busy schedules or as an introduction to Reiki.</p>
-          <a href="#contact" class="btn">Book Now</a>
+      <section id="services" class="section">
+        <h2 class="section-title">Services</h2>
+        <p class="section-intro">I offer personalized Reiki sessions designed to promote balance and wellbeing. Each session begins with a brief consultation to understand your needs and goals.</p>
+        
+        <div class="services-grid">
+          <article class="service-card">
+            <h3 class="service-title">30-Minute Session</h3>
+            <p>A focused energy treatment targeting specific areas of concern.</p>
+            <div class="service-price">£20</div>
+            <p>Perfect for busy schedules or as an introduction to Reiki.</p>
+            <a href="#contact" class="btn">Book Now</a>
+          </article>
+          
+          <article class="service-card">
+            <h3 class="service-title">60-Minute Session</h3>
+            <p>A comprehensive full-body treatment for complete relaxation and balance.</p>
+            <div class="service-price">£40</div>
+            <p>Recommended for deeper work and more thorough energy balancing.</p>
+            <a href="#contact" class="btn">Book Now</a>
+          </article>
+          
+          <article class="service-card">
+            <h3 class="service-title">Distance Healing</h3>
+            <p>Experience the benefits of Reiki from the comfort of your own home.</p>
+            <div class="service-price">£30</div>
+            <p>Includes a pre-session consultation and post-session feedback.</p>
+            <a href="#contact" class="btn">Book Now</a>
+          </article>
+        </div>
+      </section>
+      
+      <section id="appointments" class="section">
+        <h2 class="section-title">Appointments</h2>
+        <p class="opening-announcement"><strong>✨ Opening from May 7th ✨</strong></p>
+        <p>Choose between a half-hour treatment or a full one-hour session. All appointments include a brief consultation to ensure I can tailor the session to your needs.</p>
+        
+        <div class="schedule-container">
+          <h3 class="schedule-title"><span aria-hidden="true">🧘‍♀️</span> At Home Appointments</h3>
+          <div class="schedule-grid">
+            <div class="schedule-day">
+              <h4>Monday</h4>
+              <ul>
+                <li>12:30 PM – 1:00 PM</li>
+                <li>1:30 PM – 2:00 PM</li>
+              </ul>
+            </div>
+            
+            <div class="schedule-day">
+              <h4>Wednesday</h4>
+              <ul>
+                <li>9:30 AM – 10:30 AM</li>
+                <li>11:00 AM – 12:00 PM</li>
+                <li>12:30 PM – 1:00 PM</li>
+                <li>1:30 PM – 2:00 PM</li>
+              </ul>
+            </div>
+          </div>
         </div>
         
-        <div class="service-card">
-          <h3>60-Minute Session</h3>
-          <p>A comprehensive full-body treatment for complete relaxation and balance.</p>
-          <div class="service-price">£40</div>
-          <p>Recommended for deeper work and more thorough energy balancing.</p>
-          <a href="#contact" class="btn">Book Now</a>
+        <div class="schedule-container">
+          <h3 class="schedule-title"><span aria-hidden="true">🚗</span> Mobile Appointments</h3>
+          <p>I'm available for mobile appointments on Tuesday & Thursday evenings.</p>
+          <p>Please note that mobile appointments may include a small travel fee depending on location.</p>
         </div>
         
-        <div class="service-card">
-          <h3>Distance Healing</h3>
-          <p>Experience the benefits of Reiki from the comfort of your own home.</p>
-          <div class="service-price">£30</div>
-          <p>Includes a pre-session consultation and post-session feedback.</p>
-          <a href="#contact" class="btn">Book Now</a>
-        </div>
-      </div>
-    </section>
-    
-    <section id="gallery" style="display: none;">
-      <h2>Gallery</h2>
-      <p>Take a peek into my healing space and previous sessions.</p>
+        <p class="schedule-note">Don't see a time that works for you? I'm flexible, so please don't hesitate to reach out for alternative appointment times.</p>
+        <a href="#contact" class="btn btn-primary">Request Appointment</a>
+      </section>
       
-      <div class="gallery">
-        <div class="gallery-item">
-          <img src="assets/images/reiki-healing-space.jpg" alt="Reiki healing space with candles" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/api/placeholder/300/300" alt="Healing crystals arrangement" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/api/placeholder/300/300" alt="Reiki hand position demonstration" loading="lazy">
-        </div>
-        <div class="gallery-item">
-          <img src="/api/placeholder/300/300" alt="Calming reiki environment" loading="lazy">
-        </div>
-      </div>
-    </section>
-    
-    <section id="appointments">
-      <h2>Appointments</h2>
-      <p><strong>✨ Opening from May 7th ✨</strong></p>
-      <p>Choose between a half-hour treatment or a full one-hour session. All appointments include a brief consultation to ensure I can tailor the session to your needs.</p>
-      
-      <div class="schedule-container">
-        <h3>🧘‍♀️ At Home Appointments</h3>
-        <div class="schedule-grid">
-          <div class="schedule-day">
-            <h4>Monday</h4>
-            <ul>
-              <li>12:30 PM – 1:00 PM</li>
-              <li>1:30 PM – 2:00 PM</li>
-            </ul>
+      <section id="faq" class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="faq-1-trigger" aria-expanded="false" class="accordion-trigger" aria-controls="faq-1-content">
+              <span class="accordion-title">What is Reiki?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div id="faq-1-content" class="accordion-content" aria-labelledby="faq-1-trigger" hidden>
+              <p>Reiki is a Japanese energy healing technique that promotes relaxation, reduces stress and anxiety, and encourages healing. It's based on the idea that an unseen "life force energy" flows through us. If one's life force energy is low, then we are more likely to get sick or feel stressed, and if it is high, we are more capable of being happy and healthy.</p>
+            </div>
           </div>
           
-          <div class="schedule-day">
-            <h4>Wednesday</h4>
-            <ul>
-              <li>9:30 AM – 10:30 AM</li>
-              <li>11:00 AM – 12:00 PM</li>
-              <li>12:30 PM – 1:00 PM</li>
-              <li>1:30 PM – 2:00 PM</li>
-            </ul>
+          <div class="accordion-item">
+            <button id="faq-2-trigger" aria-expanded="false" class="accordion-trigger" aria-controls="faq-2-content">
+              <span class="accordion-title">What does a Reiki session feel like?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div id="faq-2-content" class="accordion-content" aria-labelledby="faq-2-trigger" hidden>
+              <p>Most people report feeling deeply relaxed during a Reiki session. You might experience sensations of warmth, tingling, or a gentle pulsing where my hands are placed or hovering. Some clients feel a release of tension, while others might see colors or images. It's also completely normal to simply feel a deep sense of relaxation.</p>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button id="faq-3-trigger" aria-expanded="false" class="accordion-trigger" aria-controls="faq-3-content">
+              <span class="accordion-title">Do I need to remove clothing for a Reiki session?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div id="faq-3-content" class="accordion-content" aria-labelledby="faq-3-trigger" hidden>
+              <p>No, Reiki is performed with you fully clothed. I recommend wearing comfortable, loose-fitting clothes to help you relax during the session.</p>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button id="faq-4-trigger" aria-expanded="false" class="accordion-trigger" aria-controls="faq-4-content">
+              <span class="accordion-title">How many sessions will I need?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div id="faq-4-content" class="accordion-content" aria-labelledby="faq-4-trigger" hidden>
+              <p>This varies depending on your individual needs and goals. Some people benefit from a single session when addressing a specific issue, while others prefer regular sessions as part of their ongoing wellness routine. After your first session, we can discuss what might be most beneficial for you.</p>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <button id="faq-5-trigger" aria-expanded="false" class="accordion-trigger" aria-controls="faq-5-content">
+              <span class="accordion-title">Is Reiki a substitute for medical treatment?</span>
+              <span class="accordion-icon" aria-hidden="true"></span>
+            </button>
+            <div id="faq-5-content" class="accordion-content" aria-labelledby="faq-5-trigger" hidden>
+              <p>No, Reiki is a complementary therapy that works alongside conventional medical treatment. It is not a substitute for consulting with healthcare professionals or following medical advice.</p>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
       
-      <div class="schedule-container">
-        <h3>🚗 Mobile Appointments</h3>
-        <p>I'm available for mobile appointments on Tuesday & Thursday evenings.</p>
-        <p>Please note that mobile appointments may include a small travel fee depending on location.</p>
-      </div>
-      
-      <p>Don't see a time that works for you? I'm flexible, so please don't hesitate to reach out for alternative appointment times.</p>
-      <a href="#contact" class="btn">Request Appointment</a>
-    </section>
-    
-    <section id="faq">
-      <h2>Frequently Asked Questions</h2>
-      
-      <div class="faq-item">
-        <div class="faq-question">What is Reiki?</div>
-        <div class="faq-answer">
-          <p>Reiki is a Japanese energy healing technique that promotes relaxation, reduces stress and anxiety, and encourages healing. It's based on the idea that an unseen "life force energy" flows through us. If one's life force energy is low, then we are more likely to get sick or feel stressed, and if it is high, we are more capable of being happy and healthy.</p>
+      <section id="testimonials" class="section">
+        <h2 class="section-title">Client Experiences</h2>
+        <div class="testimonials-grid">
+          <article class="testimonial">
+            <p>My session with Freya was incredibly restorative. I came in with shoulder tension and left feeling like a weight had been lifted, both physically and emotionally.</p>
+            <footer class="testimonial-author">— Sarah K.</footer>
+          </article>
+          
+          <article class="testimonial">
+            <p>As someone new to Reiki, Freya made me feel comfortable and explained everything clearly. The session was deeply relaxing and I've noticed improvements in my sleep quality since.</p>
+            <footer class="testimonial-author">— Michael T.</footer>
+          </article>
+          
+          <article class="testimonial">
+            <p>Freya has a true gift. Her intuitive approach helped address energy blockages I didn't even realize I had. I've booked monthly sessions going forward.</p>
+            <footer class="testimonial-author">— Emma D.</footer>
+          </article>
         </div>
-      </div>
+      </section>
       
-      <div class="faq-item">
-        <div class="faq-question">What does a Reiki session feel like?</div>
-        <div class="faq-answer">
-          <p>Most people report feeling deeply relaxed during a Reiki session. You might experience sensations of warmth, tingling, or a gentle pulsing where my hands are placed or hovering. Some clients feel a release of tension, while others might see colors or images. It's also completely normal to simply feel a deep sense of relaxation.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">Do I need to remove clothing for a Reiki session?</div>
-        <div class="faq-answer">
-          <p>No, Reiki is performed with you fully clothed. I recommend wearing comfortable, loose-fitting clothes to help you relax during the session.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">How many sessions will I need?</div>
-        <div class="faq-answer">
-          <p>This varies depending on your individual needs and goals. Some people benefit from a single session when addressing a specific issue, while others prefer regular sessions as part of their ongoing wellness routine. After your first session, we can discuss what might be most beneficial for you.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">Is Reiki a substitute for medical treatment?</div>
-        <div class="faq-answer">
-          <p>No, Reiki is a complementary therapy that works alongside conventional medical treatment. It is not a substitute for consulting with healthcare professionals or following medical advice.</p>
-        </div>
-      </div>
-    </section>
-    
-    <section id="testimonials">
-      <h2>Client Experiences</h2>
-      <div class="testimonials">
-        <article class="testimonial">
-          <p>My session with Freya was incredibly restorative. I came in with shoulder tension and left feeling like a weight had been lifted, both physically and emotionally.</p>
-          <div class="testimonial-author">— Sarah K.</div>
-        </article>
+      <section id="contact" class="section">
+        <h2 class="section-title">Contact</h2>
+        <p class="section-intro">I'd love to hear from you! Reach out with any questions about Reiki or to book your session.</p>
         
-        <article class="testimonial">
-          <p>As someone new to Reiki, Freya made me feel comfortable and explained everything clearly. The session was deeply relaxing and I've noticed improvements in my sleep quality since.</p>
-          <div class="testimonial-author">— Michael T.</div>
-        </article>
-        
-        <article class="testimonial">
-          <p>Freya has a true gift. Her intuitive approach helped address energy blockages I didn't even realize I had. I've booked monthly sessions going forward.</p>
-          <div class="testimonial-author">— Emma D.</div>
-        </article>
-      </div>
-    </section>
-    
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>I'd love to hear from you! Reach out with any questions about Reiki or to book your session.</p>
-      
-      <div class="contact-methods">
-        <div class="contact-method">
-          <i class="fas fa-envelope"></i>
-          <div>
-            <strong>Email</strong><br>
-            <a href="mailto:reikiwithfreya@hotmail.com">reikiwithfreya@hotmail.com</a>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <span class="contact-icon" aria-hidden="true"></span>
+            <div>
+              <h3 class="contact-method-title">Email</h3>
+              <a href="mailto:reikiwithfreya@hotmail.com">reikiwithfreya@hotmail.com</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="contact-method">
-          <i class="fas fa-phone"></i>
-          <div>
-            <strong>Phone</strong><br>
-            <a href="tel:+447814233305">+44 7814 233305</a>
+          
+          <div class="contact-method">
+            <span class="contact-icon" aria-hidden="true"></span>
+            <div>
+              <h3 class="contact-method-title">Phone</h3>
+              <a href="tel:+447814233305">+44 7814 233305</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <span class="contact-icon" aria-hidden="true"></span>
+            <div>
+              <h3 class="contact-method-title">Instagram</h3>
+              <a href="https://instagram.com/reikiwithfreya" target="_blank" rel="noopener">@reikiwithfreya</a>
+            </div>
           </div>
         </div>
         
-        <div class="contact-method">
-          <i class="fab fa-instagram"></i>
-          <div>
-            <strong>Instagram</strong><br>
-            <a href="https://instagram.com/reikiwithfreya" target="_blank" rel="noopener">@reikiwithfreya</a>
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required aria-required="true">
           </div>
-        </div>
-      </div>
-      
-      <form id="contactForm">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required aria-required="true">
-        </div>
-        
-        <div>
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required aria-required="true">
-        </div>
-        
-        <div>
-          <label for="phone">Phone (optional)</label>
-          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-        </div>
-        
-        <div>
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required aria-required="true"></textarea>
-        </div>
-        
-        <button type="submit" class="btn">Send Message</button>
-      </form>
-    </section>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required aria-required="true">
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required aria-required="true"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </section>
+    </div>
   </main>
   
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const mobileMenu = document.querySelector('.mobile-menu');
-      
-      hamburgerMenu.addEventListener('click', function() {
-        this.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-      });
-      
-      // Close mobile menu when a link is clicked
-      const mobileLinks = document.querySelectorAll('.mobile-menu a');
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          hamburgerMenu.classList.remove('active');
-          mobileMenu.classList.remove('active');
-        });
-      });
-    });
-  </script>
-  <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const faqQuestions = document.querySelectorAll('.faq-question');
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="current-year">2025</span> Reiki with Freya. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/reikiwithfreya" aria-label="Follow on Instagram" target="_blank" rel="noopener">
+          <span class="sr-only">Instagram</span>
+          <span class="social-icon instagram" aria-hidden="true"></span>
+        </a>
+        <a href="mailto:reikiwithfreya@hotmail.com" aria-label="Email Reiki with Freya">
+          <span class="sr-only">Email</span>
+          <span class="social-icon email" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+  </footer>
 
-    faqQuestions.forEach(question => {
-      question.addEventListener('click', function() {
-        // Toggle the active class on the clicked question
-        this.classList.toggle('active');
+  <a href="#top" class="back-to-top" aria-label="Back to top">
+    <span class="sr-only">Back to top</span>
+    <span class="back-to-top-icon" aria-hidden="true"></span>
+  </a>
 
-        // Find the next sibling (the answer) and toggle its visibility
-        const answer = this.nextElementSibling;
-        if (answer.style.maxHeight) {
-          answer.style.maxHeight = null; // Collapse the answer
-        } else {
-          answer.style.maxHeight = answer.scrollHeight + 'px'; // Expand the answer
-        }
-      });
-    });
-  });
-</script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
