@@ -12,8 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="resources/css/styles.css">
-  <script type="text/javascript" src="resources/js/script.js" defer></script>
+  <link rel="stylesheet" href="/resources/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script type="text/javascript" src="/resources/js/script.js" defer></script>
   <!-- Font Awesome will be loaded in the CSS file to improve page loading performance -->
 </head>
 <body>
@@ -46,7 +47,7 @@
     <div class="container">
       <p class="hero-tagline">Gentle healing & peaceful energy for mind, body, and spirit</p>
       <div class="hero-image-container">
-        <img src="images/reikistock.jpg" alt="Reiki healing session in progress" class="hero-image" width="450" height="300" loading="lazy">
+        <img src="resources/images/reikistock.jpg" alt="Reiki healing session in progress" class="hero-image" width="450" height="300" loading="lazy">
       </div>
     </div>
   </section>
@@ -57,7 +58,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-image-container">
-            <img src="images/freya-headshot.jpg" alt="Freya smiling" class="about-image" width="200" height="200" loading="lazy">
+            <img src="resources/images/freya-headshot.jpg" alt="Freya smiling" class="about-image" width="200" height="200" loading="lazy">
           </div>
           <div class="about-text">
             <p>Hi, I'm Freya — a certified Reiki practitioner offering gentle and calming energy healing sessions to help you find peace, balance, and space for yourself.</p>
@@ -243,7 +244,11 @@
           </div>
         </div>
         
-        <form id="contactForm" class="contact-form">
+         <form class="contact-form" action="https://formsubmit.co/reikiwithfreya@gmail.com" method="POST">
+                      <!-- Add these hidden fields inside your form -->
+<input type="hidden" name="_subject" value="New Quote Request from Website">
+<input type="hidden" name="_captcha" value="true">
+<input type="hidden" name="_next" value="https://yoursite.github.io/thank-you.html">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required aria-required="true">
